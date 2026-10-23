@@ -136,7 +136,7 @@ pub fn start(home: &Path, path: &Path, explicit: Option<&Path>) -> Result<()> {
         Ok(())
     })();
     if let Err(error) = outcome {
-        if recover(&mut Windows, &state).is_ok() {
+        if matches!(recover(&mut Windows, &state), Ok(false)) {
             std::fs::remove_file(&state_path)?;
         }
         return Err(error).context("Startup failed; run stop if recovery metadata remains");

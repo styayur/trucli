@@ -62,6 +62,7 @@ pub fn validate(
         println!("Mihomo validation NOT performed: executable unavailable.");
         return Ok(None);
     };
+    config::owned(home, path).context("Native validation requires an unchanged Trucli-generated config; run config build first to isolate provider caches")?;
     std::fs::create_dir_all(home.join("engine"))?;
     let mut child = command(&exe)
         .arg("-t")

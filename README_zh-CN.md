@@ -61,6 +61,7 @@ CIDR 默认为空，不假设任何私网段属于校园网；填写规范网络
 可选 SOCKS 端口也必须可用。校园 DNS 需要由已有授权网络环境正确提供。
 
 如果绝对 PATH 目录中已有 `mihomo.exe`，可省略 `--mihomo`；也可显式指定可信 `.exe`。
+原生引擎校验仅接受未修改的 Trucli 生成文件，以隔离 provider 缓存；基础 YAML 请先 build。
 文件型 provider 更新后需重新生成；HTTP provider 刷新只写 Trucli 缓存。
 外部引擎校验可能访问配置中的 provider URL 并写入引擎数据目录；`status` 与 `doctor`
 不会运行引擎。为保护密钥，外部校验输出不会公开，失败时应在本地直接运行引擎排查。

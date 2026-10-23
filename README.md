@@ -75,6 +75,8 @@ setup; Trucli does not invent DNS servers. An optional SOCKS port must also be f
 
 `--mihomo` is optional when `mihomo.exe` is on an absolute PATH entry. Explicit
 paths must identify an existing `.exe`; users are responsible for trusting it.
+Native validation accepts unchanged Trucli-generated configs so provider refreshes
+cannot write to original user files; build first when validating a base YAML.
 File providers are snapshots: rebuild to pick up changes. HTTP provider refreshes
 write Trucli-owned caches. External validators may access provider URLs and create engine data; `status`
 and `doctor` never invoke them. Validation output is suppressed to protect secrets;

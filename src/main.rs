@@ -147,7 +147,7 @@ fn run(cli: Cli) -> Result<()> {
 }
 fn main() {
     if let Err(e) = run(Cli::parse()) {
-        eprintln!("error: {e}");
+        eprintln!("error: {e:#}");
         std::process::exit(1);
     }
 }
