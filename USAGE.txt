@@ -1,0 +1,32 @@
+Trucli v0.1.0-alpha.1 — Experimental Windows 10/11 x86-64
+Copyright (C) 2026 styayur. AGPL-3.0-only. No warranty. Unsigned executable.
+
+Use an official institution-authorized aTrust client and a separately obtained,
+trusted Mihomo proxy-engine executable. Neither is bundled or downloaded.
+
+trucli --help
+trucli init
+Edit LOCALAPPDATA/Trucli/profiles/example.yaml: replace placeholder domains using
+authorized documentation. Do not guess campus CIDRs or DNS servers.
+trucli profile validate example
+trucli status --profile example
+trucli doctor --profile example --config <base.yaml>
+trucli --mihomo <trusted.exe> config build --profile example --input <base.yaml>
+trucli --mihomo <trusted.exe> config validate --config <printed-generated-path>
+trucli --mihomo <trusted.exe> start --mode system-proxy --config <generated.yaml>
+trucli stop
+
+Only system-proxy-aware apps are affected. No TUN or authentication verification.
+Use rule mode and a loopback HTTP/mixed port. Disable TUN/DNS server and remove
+controllers, listeners, tunnels, UI, NTP, authentication and interface-name settings.
+Read README.md for exact constraints and privacy/recovery limitations.
+
+stop conditionally restores the previous proxy state and checks child identity.
+If another app changed proxy settings, its newer state is preserved. If the engine
+crashes, run stop with the same --home. Complete rollback is not guaranteed.
+Do not share generated YAML or runtime.json. doctor --export produces a redacted
+summary; review before sharing. aTrust detection does not prove connectivity.
+
+Source: https://github.com/styayur/trucli/tree/v0.1.0-alpha.1
+Releases/checksums: https://github.com/styayur/trucli/releases
+See LICENSE, THIRD_PARTY_NOTICES.md, DEPENDENCIES.json and dependency-licenses/.
