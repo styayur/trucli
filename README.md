@@ -60,6 +60,8 @@ tunnels, transparent proxy ports, authentication, global `interface-name`, NTP a
 fields. Trucli rejects these unsupported settings instead of silently changing
 their meaning. Configure campus DNS resolution through your authorized network
 setup; Trucli does not invent DNS servers. An optional SOCKS port must also be free.
+Legacy `ss-config`, `vmess-config`, `tuic-server` and `external-doh-server` server
+options are also rejected, even when other listener settings are safe.
 
 ```powershell
 .\trucli.exe profile list
