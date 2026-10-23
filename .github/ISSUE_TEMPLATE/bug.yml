@@ -1,0 +1,15 @@
+name: Bug report
+description: Report a reproducible Trucli problem without private network details.
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps and expected behavior
+      description: Include the Trucli version and Windows version. Do not paste credentials, subscription URLs, personal paths, or raw configurations.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Redacted evidence
+      description: Optional output from doctor --export, reviewed before sharing.

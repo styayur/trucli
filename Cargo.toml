@@ -1,0 +1,26 @@
+[package]
+name = "trucli"
+version = "0.1.0-alpha.1"
+edition = "2024"
+rust-version = "1.89"
+license = "AGPL-3.0-only"
+description = "Experimental Windows aTrust and Mihomo campus routing coordinator"
+repository = "https://github.com/styayur/trucli"
+readme = "README.md"
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.5", features = ["derive"] }
+ipnet = { version = "2.11", features = ["serde"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde-saphyr = { version = "2.0", default-features = false, features = ["serialize", "deserialize"] }
+sha2 = "0.10"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_Foundation", "Win32_System_Threading", "Win32_NetworkManagement_IpHelper", "Win32_Networking_WinSock", "Win32_Networking_WinInet", "Win32_Security"] }
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true

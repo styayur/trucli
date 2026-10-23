@@ -1,0 +1,30 @@
+name: CI
+on:
+  push:
+    branches: [main, 'feat/**', 'fix/**']
+  pull_request:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  windows:
+    name: Windows checks
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Install stable Rust
+        run: rustup toolchain install stable --profile minimal --component rustfmt --component clippy
+      - run: rustup default stable
+      - run: cargo fmt --all -- --check
+      - run: cargo check --locked
+      - run: cargo clippy --all-targets --all-features -- -D warnings
+      - run: cargo test --locked
+      - run: python scripts/package.py --check-inventory
+  audit:
+    name: Dependency audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - run: rustup toolchain install stable --profile minimal && rustup default stable
+      - run: cargo install cargo-audit --version 0.22.2 --locked
+      - run: cargo audit --deny warnings
