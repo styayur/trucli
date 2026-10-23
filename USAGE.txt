@@ -19,6 +19,7 @@ trucli stop
 Only system-proxy-aware apps are affected. No TUN or authentication verification.
 Use rule mode and a loopback HTTP/mixed port. Disable TUN/DNS server and remove
 controllers, listeners, tunnels, UI, NTP, authentication and interface-name settings.
+ss-config, vmess-config, tuic-server and external-doh-server are also unsupported.
 Read README.md for exact constraints and privacy/recovery limitations.
 
 stop conditionally restores the previous proxy state and checks child identity.

@@ -59,6 +59,7 @@ CIDR 默认为空，不假设任何私网段属于校园网；填写规范网络
 省略控制器、自定义 listeners、tunnels、透明代理端口、authentication、全局
 `interface-name`、NTP 及 UI 字段。这些不支持的配置会被拒绝，不会被静默改写。
 可选 SOCKS 端口也必须可用。校园 DNS 需要由已有授权网络环境正确提供。
+同样拒绝 `ss-config`、`vmess-config`、`tuic-server` 和 `external-doh-server` 服务端选项。
 
 如果绝对 PATH 目录中已有 `mihomo.exe`，可省略 `--mihomo`；也可显式指定可信 `.exe`。
 原生引擎校验仅接受未修改的 Trucli 生成文件，以隔离 provider 缓存；基础 YAML 请先 build。
