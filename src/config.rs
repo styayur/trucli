@@ -14,7 +14,10 @@ pub struct Manifest {
     pub campus_rules: usize,
 }
 pub fn digest(data: &[u8]) -> String {
-    format!("{:x}", Sha256::digest(data))
+    Sha256::digest(data)
+        .iter()
+        .map(|byte| format!("{byte:02x}"))
+        .collect()
 }
 pub fn parse(text: &str) -> Result<Mapping> {
     let v: Value = storage::yaml(text).map_err(|_| {
@@ -245,6 +248,17 @@ pub fn safe_runtime(map: &Mapping) -> Result<u16> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn configuration_digest_keeps_canonical_sha256_bytes() {
+        assert_eq!(
+            digest(b""),
+            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        );
+        assert_eq!(
+            digest(b"abc"),
+            "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
+        );
+    }
     fn profile() -> Profile {
         serde_saphyr::from_str(&crate::profile::EXAMPLE.replace("example.invalid", "example.edu"))
             .unwrap()
