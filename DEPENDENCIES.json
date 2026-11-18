@@ -1,9 +1,9 @@
 [
   {
     "name": "annotate-snippets",
-    "version": "0.12.17",
+    "version": "0.12.18",
     "license": "MIT OR Apache-2.0",
-    "source": "https://crates.io/crates/annotate-snippets/0.12.17",
+    "source": "https://crates.io/crates/annotate-snippets/0.12.18",
     "repository": "https://github.com/rust-lang/annotate-snippets-rs"
   },
   {
@@ -120,9 +120,9 @@
   },
   {
     "name": "const-oid",
-    "version": "0.10.2",
+    "version": "0.10.3",
     "license": "Apache-2.0 OR MIT",
-    "source": "https://crates.io/crates/const-oid/0.10.2",
+    "source": "https://crates.io/crates/const-oid/0.10.3",
     "repository": "https://github.com/RustCrypto/formats"
   },
   {
@@ -155,9 +155,9 @@
   },
   {
     "name": "encoding_rs",
-    "version": "0.8.42",
+    "version": "0.8.44",
     "license": "(Apache-2.0 OR MIT) AND BSD-3-Clause",
-    "source": "https://crates.io/crates/encoding_rs/0.8.42",
+    "source": "https://crates.io/crates/encoding_rs/0.8.44",
     "repository": "https://github.com/hsivonen/encoding_rs"
   },
   {
@@ -169,9 +169,9 @@
   },
   {
     "name": "granit-parser",
-    "version": "2.0.0",
+    "version": "2.1.0",
     "license": "MIT OR Apache-2.0",
-    "source": "https://crates.io/crates/granit-parser/2.0.0",
+    "source": "https://crates.io/crates/granit-parser/2.1.0",
     "repository": "https://github.com/bourumir-wyngs/granit-parser"
   },
   {
@@ -204,9 +204,9 @@
   },
   {
     "name": "itoa",
-    "version": "1.0.18",
+    "version": "1.0.19",
     "license": "MIT OR Apache-2.0",
-    "source": "https://crates.io/crates/itoa/1.0.18",
+    "source": "https://crates.io/crates/itoa/1.0.19",
     "repository": "https://github.com/dtolnay/itoa"
   },
   {
@@ -288,9 +288,9 @@
   },
   {
     "name": "serde-saphyr",
-    "version": "2.0.0",
+    "version": "2.1.1",
     "license": "MIT OR Apache-2.0",
-    "source": "https://crates.io/crates/serde-saphyr/2.0.0",
+    "source": "https://crates.io/crates/serde-saphyr/2.1.1",
     "repository": "https://github.com/bourumir-wyngs/serde-saphyr"
   },
   {
@@ -330,9 +330,9 @@
   },
   {
     "name": "smallvec",
-    "version": "1.16.3",
+    "version": "1.16.5",
     "license": "MIT OR Apache-2.0",
-    "source": "https://crates.io/crates/smallvec/1.16.3",
+    "source": "https://crates.io/crates/smallvec/1.16.5",
     "repository": "https://github.com/servo/rust-smallvec"
   },
   {
@@ -344,9 +344,9 @@
   },
   {
     "name": "syn",
-    "version": "3.0.9",
+    "version": "3.0.10",
     "license": "MIT OR Apache-2.0",
-    "source": "https://crates.io/crates/syn/3.0.9",
+    "source": "https://crates.io/crates/syn/3.0.10",
     "repository": "https://github.com/dtolnay/syn"
   },
   {
@@ -365,9 +365,9 @@
   },
   {
     "name": "unicode-width",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "license": "MIT OR Apache-2.0",
-    "source": "https://crates.io/crates/unicode-width/0.2.2",
+    "source": "https://crates.io/crates/unicode-width/0.2.3",
     "repository": "https://github.com/unicode-rs/unicode-width"
   },
   {
